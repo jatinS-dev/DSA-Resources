@@ -1,0 +1,28 @@
+#pragma optimization_level 3
+#pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math,O3")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx")
+#pragma GCC optimize("Ofast")//Comment optimisations for interactive problems (use endl)
+#pragma GCC target("avx,avx2,fma")
+#pragma GCC optimization ("unroll-loops")
+#include <bits/stdc++.h>
+using namespace std;
+
+
+#define int long long
+#define double long double
+using pii = pair<int, int>
+template<typename T> // Template works like the Mold/ cookie-cutter, though Dough can be different
+using Prior = std::priority_queue<T>;
+template<typename T>
+using prior = std::priority_queue<T, vector<T>, greater<T>>;
+
+
+#define X first
+#define Y second
+#define eb emplace_back
+#define ALL(x) begin(x), end(x)
+#define RALL(x) rbegin(x), rend(x)
+
+mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count()); //use this insted of rand();
+
+
