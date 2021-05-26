@@ -1,6 +1,6 @@
 # Resources for Competitive Programming, Interview Prep, System Design, & Problem Solving.
 
-## 👉 Reachout to me if you have any questions: [@kjatinS-dev](https://www.linkedin.com/in/jatin-salve-b1001b1a2/)
+## 👉 Reachout to me if you have any questions: [@jatinS-dev](https://www.linkedin.com/in/jatin-salve-b1001b1a2/)
 
 ## Problems & Tips
 - [CSES](https://cses.fi/problemset/)
