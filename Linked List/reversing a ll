@@ -1,0 +1,52 @@
+
+// Reversing a linked list in Iterative way
+
+
+struct LinkedList {
+    Node *head;
+    LinkedList() {head = NULL;}
+    void reverseLL() {
+        // step 1: Initialize 3 elements
+        Node *current = head;
+        Node *prev = NULL;
+        Node *next = NULL;
+
+        // step 2: while current is not equal to empty,
+        // move next to current-> next and current->next to prev
+
+        // step 3: Move current to next and prev. to current
+
+        while (current != NULL) {
+            next = current->next;
+            current->next = prev;
+            current = next;
+            prev = temp;
+        }
+
+        // step 4: move head to prev
+        head = prev;
+    }
+}
+
+// Reversing a linked list in recursive way
+
+void reverse()
+    {
+        // Initialize current, previous and
+        // next pointers
+        Node* current = head;
+        Node *prev = NULL, *next = NULL;
+ 
+        while (current != NULL) {
+            // Store next
+            next = current->next;
+ 
+            // Reverse current node's pointer
+            current->next = prev;
+ 
+            // Move pointers one position ahead.
+            prev = current;
+            current = next;
+        }
+        head = prev;
+    }
