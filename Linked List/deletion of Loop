@@ -1,0 +1,23 @@
+class Solution
+{
+    public:
+    //Function to remove a loop in the linked list.
+    void removeLoop(Node* head)
+    {
+        Node* fast = head;
+        Node* slow = head;
+        // We have to run while loop 'jab tak fast = slow nahi ho jata'
+        do{
+            slow = slow->next;
+            fast = fast->next->next;
+        }while(slow!=fast);
+        
+        // take fast pointer to head and move both the pointers by one- one steps
+        fast = head;
+        while(slow->next != fast->next){
+            slow = slow->next;
+            fast = fast->next;
+        }
+        slow->next = NULL;
+    }
+};
