@@ -1,25 +1,35 @@
+/*                 _ooOoo_
+                  o8888888o
+                  88" . "88
+                  (| -_- |)
+                  O\  =  /O
+               ____/`---'\____
+             .'  \\|     |//  `.
+            /  \\|||  :  |||//  \
+           /  _||||| -:- |||||-  \
+           |   | \\\  -  /// |   |
+           | \_|  ''\---/''  |   |
+           \  .-\__  `-`  ___/-. /
+         ___`. .'  /--.--\  `. . __
+      ."" '<  `.___\_<|>_/___.'  >'"".
+     | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+     \  \ `-.   \_ __\ /__ _/   .-` /  /
+======`-.____`-.___\_____/___.-`____.-'======
+                   `=---='
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         ????       ??BUG
+*/
+ 
+
+
 #pragma optimization_level 3
 #pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math,O3")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx")
 #pragma GCC optimize("Ofast")//Comment optimisations for interactive problems (use endl)
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization ("unroll-loops")        
-#include <algorithm>
-#include <chrono>
-#include <cmath>
-#include <complex>
-#include <fstream>
-#include <iomanip>
-#include <iostream>
-#include <list>
-#include <map>
-#include <queue>
-#include <set>
-#include <stack>
-#include <string>
-#include <unordered_map>
-#include <unordered_set>
-#include <vector>
+#include <bits/stdc++.h>
+
 using namespace std;
 #define int               long long
 #define pb                push_back
