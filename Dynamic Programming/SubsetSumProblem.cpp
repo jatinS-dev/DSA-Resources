@@ -21,21 +21,6 @@ public:
                 }
             }
         }
-
         return dp[n][sum];
-    }
-
-    bool canPartition(vector<int>& nums) {
-        int sum = 0;
-        for (int i = 0; i < nums.size(); i++) {
-            sum += nums[i];
-        }
-        
-        if (sum % 2 != 0) {
-            return false;
-        }
-        
-        sum /= 2;
-        return isSubsetSum(nums, nums.size(), sum);
     }
 };
