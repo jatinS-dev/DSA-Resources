@@ -1,0 +1,6 @@
+class Solution{
+public:
+  int knapSack(int wt[], int val[], int W, int n) {
+    // Code
+  }
+};
