@@ -4,7 +4,7 @@
 using namespace std;
 #define ll long long
 
-int dp[1001][1001];
+int static dp[1001][1001];
 int LCS(string &s1, string &s2, int m, int n){
     // Base Case
     if(m == 0 || n == 0){
