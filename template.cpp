@@ -22,12 +22,11 @@
  
 
 
-#pragma optimization_level 3
+
 #pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math,O3")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx")
 #pragma GCC optimize("Ofast")//Comment optimisations for interactive problems (use endl)
-#pragma GCC target("avx,avx2,fma")
-#pragma GCC optimization ("unroll-loops")        
+#pragma GCC target("avx,avx2,fma")     
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -60,27 +59,22 @@ const int MOD = 1e9 + 7;
 const long long MOD2 = static_cast<long long>(MOD) * MOD;
 
 void solve(){
-    // Write your code here
+    // Code here
 } 
 
+
 signed main(){
+    #ifndef ONLINE_JUDGE
+      freopen("input1.txt", "r", stdin);
+      freopen("output1.txt", "w", stdout);
+    #endif
     ios_base::sync_with_stdio(false);
-    cin.tie(0);cout.tie(0);
-    //freopen("input.txt", "r", stdin);
-    //freopen("output.txt", "w", stdout);
-    #ifdef SIEVE
-        sieve();
-    #endif
-    #ifdef NCR
-        init();
-    #endif
+    cin.tie(NULL);
     int t=1;
     //cin>>t;
     while(t--) solve();
     return 0;
 }
-
-
 
 /*---------------------------------------------------Vector STL/Function----------------------------------------------------------
  * sort(v.begin().v.end())
