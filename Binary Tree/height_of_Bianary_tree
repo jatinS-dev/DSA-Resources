@@ -1,0 +1,20 @@
+// Height of the Binary tree
+
+#include<bits/stdc++.h>
+using namespace std;
+
+struct Node {
+	int data;
+	Node* left;
+	Node* right;
+}
+
+// Using recursion
+
+int height(Node* root) {
+	if(!root) return;
+	int r_height = height(root->right);
+	int l_height = height(root->left);
+	int height = max(r_height, l_height) + 1;
+	return height;
+}
