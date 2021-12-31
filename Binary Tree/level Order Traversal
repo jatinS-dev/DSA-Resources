@@ -1,23 +1,42 @@
-#include<bits/stdc++.h>
-using namespace std;
+// Breadth First traversal
+// 1) Level Order Traversal 
 
-struct Node {
-  int data;
-  Node* left;
-  Node* right;
-};
+Code :
 
-vector<int> levelOrder(Node* root) {
-  vector<int> ans;
-  if(root == NULL) return;
-  queue<Node*> q;
-  p.push(root);
-  while(!q.empty()) {
-    Node* t = q.front();
-    ans.push_back(t->data);
-    if(t->left) q.push(t->left);
-    if(t->right) q.push(t->right);
-    q.pop();
-  }
-  return ans;
+vector<int> levelOrderTraversal(Node* root) {
+	vector<int > v;
+if(!root ) return v;
+queue<Node* > q;
+q.push(root);
+
+while(!q.empty()) {
+	Node* temp = q.front();
+	v.push_back(temp->data);
+	if(temp->left) q.push(temp->left);
+	if(temp->right) q.push(temp->right);
+	q.pop();
+}
+return v;
+}
+
+// 2) Reverse Level Order Traversal
+
+Code:
+
+
+vector<int> reverseLevelOrderTraversal(Node* root) {
+	vector<int > v;
+if(!root ) return v;
+queue<Node* > q;
+q.push(root);
+
+while(!q.empty()) {
+	Node* temp = q.front();
+	v.push_back(temp->data);
+	if(temp->right) q.push(temp->right);
+	if(temp->left) q.push(temp->left);
+	q.pop();
+}
+reverse(v.begin(), v.end());
+return v;
 }
