@@ -1,0 +1,28 @@
+// 2) Inorder Traversal (Iterative Method)
+
+Code:
+
+class solution {
+	public:
+		vector<int> inOrderTraversal(Node* root) {
+			vector<int> inorder;
+			stack<Node*> st;
+			Node* node = root;
+			while(1) {
+				if(node != NULL ) {
+					st.push(node);
+					node = node->left;
+      } else {
+	        if(st.empty()) {
+		        break;
+      } else {
+	        node = st.top();
+	        st.pop();
+	        inorder.push_back(node->data);
+	        node = node->right;
+      }
+   }	
+}
+return inorder;
+}
+}
