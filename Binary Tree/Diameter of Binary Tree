@@ -1,0 +1,16 @@
+// Diameter of Binary Tree
+
+int ma;
+int func(Node* root) {
+	if(!root) return 0;
+	int x = func(root->right);
+	int y = func(root->left);
+	ma = max(ma, (x+y+1));
+	return max((x,y)+1);
+}
+
+int diameter(Node* root) {
+	ma = INT_MIN;
+	int j = func(root);
+	return ma;
+}
