@@ -1,0 +1,42 @@
+// Depth First Traversal
+// 1) a) Pre Order Traversal (Recursive)
+
+Code:
+
+void preorder(Node* node) {
+if(!node) return;
+	cout<<node->data<<” “;
+	preorder(node->left);
+	preorder(node->right);
+}
+
+// 1) b) Pre Order Traversal(Iterative) using Stack.
+
+Algorithm:
+- Create a stack.
+- pop.
+- Enqueue the root.
+- Enqueue the right child first and then the left child.
+
+Code:
+
+Class Solution {
+
+public:
+	vector<int> preOrederTraversal(Node* root) {
+		vector<int> preorder;
+		if(!root) return preorder;
+		stack<Node*> st;
+		st.push(root);
+		while(!st.empty()) {
+			Node* temp = st.top();
+			preorder.push_back(temp->data);
+			st.pop();
+			if(root->right) st.push(root->right);
+			if(root->lleft) st.push(root->left);
+}
+return preorder;
+	}
+}
+
+
