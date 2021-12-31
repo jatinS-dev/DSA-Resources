@@ -1,0 +1,20 @@
+// Mirror of a Binary Tree
+
+PS: Convert a BT into its mirror tree.
+
+Algorithm:
+- Pass left part to the recursive mirror function
+- Pass right part to the recursive mirror function
+- Swap two parts.
+(Basically swapping `root->left` and `root->right`)
+
+Code:
+
+void mirror(Node* root) {
+	if(!root) return;
+	mirror(root->left);
+	mirror(root->right);
+	Node* temp = root->left;
+	root->left = root->right;
+	root->right = temp;
+}
