@@ -1,0 +1,18 @@
+class Solution {
+  public:
+  
+    // Convert a given tree to a tree where every node contains sum of values of
+    // nodes in left and right subtrees in the original tree
+    int sumTree(Node* root) {
+        if(!root) return 0;
+        int l = sumTree(root->left);
+        int r = sumTree(root->right);
+        int x = root->data;
+        root->data = r+l;
+        return (l+r+x);
+    }
+    
+    void toSumTree(Node *node) {
+        sumTree(node);
+    }
+};
