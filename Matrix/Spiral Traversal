@@ -1,3 +1,7 @@
+![Spiral Traversal Of Matrix](https://github.com/jatinS-dev/Data-structures-and-Algorithms/blob/main/Matrix/1.png)
+
+
+
 vector<int> Solution::spiralOrder(const vector<vector<int> > &A) {
     
     int T,B,L,R,dir;
