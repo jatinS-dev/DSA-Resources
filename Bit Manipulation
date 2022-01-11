@@ -1,4 +1,13 @@
 
+// Printing in Binary Form
+
+void printBinary(int num) {
+    for (int i = 10; i >= 0; --i) {
+        cout << ((num >> i) & 1);
+    }
+    cout << "\n";
+}
+
 // Converting Upper to lower and Vice Versa
 
     cout << char('c' & ~(' ')) << endl;
