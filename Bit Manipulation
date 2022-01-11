@@ -1,0 +1,9 @@
+
+// Converting Upper to lower and Vice Versa
+
+    cout << char('c' & ~(' ')) << endl;
+    cout << char('C' | ' ') << endl;
+    
+    cout << char('c' & ~( 1 << 5)) << endl;
+    cout << char('C' | 1 << 5) << endl;
+
