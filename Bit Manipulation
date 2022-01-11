@@ -1,4 +1,5 @@
-
+                                                                     
+                                                        /* Notes on Bit Manipulation */
 // Printing in Binary Form
 
 void printBinary(int num) {
