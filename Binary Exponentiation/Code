@@ -1,0 +1,14 @@
+// Code for Power modulo m
+#define m 1e9+7
+
+int binExp(int a, int b, int m) {
+	int res = 1;
+	while (b > 0) {
+		if (b & 1) {
+			res = (res * 1LL * a) % m;
+		}
+		a = (a * a * 1LL) % m;
+		b >>= 1;
+	}
+	return res;
+}
