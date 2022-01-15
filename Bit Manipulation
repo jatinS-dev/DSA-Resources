@@ -17,3 +17,7 @@ void printBinary(int num) {
     cout << char('c' & ~( 1 << 5)) << endl;
     cout << char('C' | 1 << 5) << endl;
 
+// Simple Use of left shift and right shift
+
+  1) Use of Left Shift - Power of 2 - i.e. (2 ^ num )  - (1ll << num);
+  2) Use of Right Shift - Divide by 2 - i.e. (num / 2 ) - (1LL >> num);
