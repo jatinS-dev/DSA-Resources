@@ -10,3 +10,37 @@ void SieveAlgo() {
 		}
 	}
 }
+
+// ---
+
+const int N = 10e7 + 10;
+	vector<bool> isPrime(N, 1);
+	vector<int> lp[N], hp[N];  // Lowest Prime of N - lp[N], Highest Prime of N - hp[N];
+	isPrime[0] = isPrime[1] = false;
+	for (int i = 2; i < N; ++i) {
+		if (isPrime[i] == true) {
+			lp[i] = hp[i] = i;
+			for (int j = i * 2; i < N; j += i) {
+				isPrime[j] = false;
+				hp[j] == i;
+				if (lp[j] == 0) {
+					lp[j] = i;
+				}
+			}
+		}
+	}
+	// Prime factorization of Number
+	int num;
+	cin >> num;
+	map<int, int> prime_factors;
+
+	while (num > 1) {
+		int prime_factor = hp[num];
+		while (num % prime_factor == 0) {
+			num /= prime_factor;
+			prime_factors[prime_factor]++;
+		}
+	}
+	for (auto factor : factors) {
+		cout << factor.fr << " " << factor.sc << endl;
+	}
