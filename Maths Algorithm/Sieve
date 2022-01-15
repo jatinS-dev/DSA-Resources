@@ -1,0 +1,12 @@
+void SieveAlgo() {
+	const int N = 10e7 + 10;
+	std::vector<bool> isPrime(N, 1);
+	isPrime[0] = isPrime[1] = false;
+	for(int i = 2; i < N; ++i) {
+		if(isPrime[i] == true) {
+			for(int j = i * 2; i < N; j += i) {
+				isPrime[j] = false;
+			}
+		}
+	}
+}
