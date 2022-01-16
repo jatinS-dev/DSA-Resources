@@ -1,0 +1,26 @@
+const int N = 1e5 + 10;
+
+vector<int> g[N];
+bool vis[N];
+
+void dfs(int vertex) {
+	/*
+		Take the action on vertex after entering
+		the vertex.
+	*/
+	for (int child : g[vertex]) {
+		/*
+			Take a action on child before
+			entering the child node.
+		*/
+		dfs(child);
+		/*
+			Take a action on child
+			after existing child node.
+		*/
+	}
+	/*
+		Take a action on vertex before
+		entering the vertex.
+	*/
+}
