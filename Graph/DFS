@@ -1,60 +1,53 @@
-#include<iostream>
-#include<list>
-#include<map>
-#include<queue>
+#include<bits/stdc++.h>
 using namespace std;
-template<typename T>
 
-// Creating Array of List
 
-class Graph {
-    map<T, list<T>> l;
-public:
-  
-    void addEdge(int x, int y){
-        l[x].push_back(y);
-        l[y].push_back(x);
-    }
-    void dfs_helper(T src, map<T, bool> &visited){
-        //  dfs_helper is the recursive function that will traverse the graph
-        cout<<src<<" ";
-        visited[src] = true;
-        // After printing source, Now go to all neighbour of the src that is not visited one by one
-        for(T nbr : l[src]){
-            if(!visited[nbr]){
-                dfs_helper(nbr, visited);
+class Solution {
+    void dfs(int node, vector<int> &vis, vector<int> adj[], vector<int> &storeDfs) {
+        storeDfs.push_back(node); 
+        vis[node] = 1; 
+        for(auto it : adj[node]) {
+            if(!vis[it]) {
+                dfs(it, vis, adj, storeDfs); 
             }
         }
-     }
-    // Recursive Prosses
-    void dfs(T src){
-        map<T, bool> visited;
-        // Mark all the node false in the beginning
-        for (auto p:l){
-            T node = p.first;
-            visited[node] = false;
-        }
-        // We should also call the helper function
-        dfs_helper(src, visited);
-
     }
+public:
+	vector<int>dfsOfGraph(int V, vector<int> adj[]){
+	    vector<int> storeDfs; 
+	    vector<int> vis(V+1, 0); 
+      for(int i = 1;i<=V;i++) {
+        if(!vis[i]) dfs(i, vis, adj, storeDfs); 
+      }
+	    return storeDfs; 
+	}
 };
 
+// { Driver Code Starts.
 int main(){
-    Graph<int> g;
-    
-    g.addEdge(0, 1);
-    g.addEdge(1, 2);
-    g.addEdge(2, 3);
-    g.addEdge(1, 2);
-    g.addEdge(2, 2);
-    g.addEdge(3, 4);
-    g.addEdge(3, 5);
-    g.addEdge(4, 6);
-    g.addEdge(6, 7);
+	int tc;
+	cin >> tc;
+	while(tc--){
+		int V, E;
+    	cin >> V >> E;
 
-    
-    g.dfs(0);
+    	vector<int> adj[V];
 
-    return 0;
-}
+    	for(int i = 0; i < E; i++)
+    	{
+    		int u, v;
+    		cin >> u >> v;
+    		adj[u].push_back(v);
+    		adj[v].push_back(u);
+    	}
+        // string s1;
+        // cin>>s1;
+        Solution obj;
+        vector<int>ans=obj.dfsOfGraph(V, adj);
+        for(int i=0;i<ans.size();i++){
+        	cout<<ans[i]<<" ";
+        }
+        cout<<endl;
+	}
+	return 0;
+}  // } Driver Code Ends
