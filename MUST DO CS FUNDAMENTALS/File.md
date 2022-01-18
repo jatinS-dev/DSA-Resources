@@ -90,6 +90,12 @@
 23. Hub vs Switch 
 24. VPN, advantages and disadvantages of it 
 25. LAN
+26. What is BGP(Border Gateway Protocol)?
+27. What is Link State Routing? How does it work?
+28. What is OSPF?
+
+
+
 
 
 - [InterviewBit Interview Questions : ](https://www.interviewbit.com/networking-interview-questions/)
