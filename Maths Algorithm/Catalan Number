@@ -3,8 +3,27 @@ Catalan Number = 0......i.....N
                
                
                f(N) = Σ (i to N) f(i-1). f(N-1)  
+         
+         /*-----------------------------------------------------------------*/
+         
+               Code - 
                
-               
+                int catalan_Number(int n) {
+                    int catalan[n+1];
+                    catalan[0] = catalan[1] = 1;
+        
+                    for(int i=2;i<=n;++i) {
+                        catalan[i] = 0;
+                        for(int j=0;j<i;++j) {
+                             catalan[i] += catalan[j]*catalan[i-j-1];
+                        }
+                    }
+                    return catalan[n];
+                 }
+                 
+       /*-----------------------------------------------------------------*/
+       
+       
 Questions related to Catalan Number - 
 
   1) Count the number of BST
