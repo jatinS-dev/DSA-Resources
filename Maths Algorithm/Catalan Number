@@ -1,0 +1,11 @@
+Catalan Number = 0......i.....N
+               = 2nCn/n+1
+               
+               
+               f(N) = Σ (i to N) f(i-1). f(N-1)  
+               
+               
+Questions related to Catalan Number - 
+
+  1) Count the number of BST
+  
