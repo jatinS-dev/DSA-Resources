@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int countAnagrams(string pat, string txt) {
+    unordered_map<char, int> mp;
+    int anaCount = 0;
+    for (int i = 0; i < pat.length(); i++)
+        mp[pat[i]]++;
+    int count = mp.size();
+    int j = 0, i = 0, k = pat.length();
+    int n = txt.length();
+    while (j < n) {
+        if (mp.find(txt[j]) != mp.end()) {
+            mp[txt[j]]--;
+            if (mp[txt[j]] == 0)
+                count--;
+        }
+        if ((j - i + 1) < k) j++;
+
+        else if ((j - i + 1) == k) {
+            if (count == 0)         anaCount++;
+
+            if (mp.find(txt[i]) != mp.end()) {
+                mp[txt[i]]++;
+                if ( mp[txt[i]] == 1)
+                    count++;
+            }
+            i++, j++;
+        }
+
+    }
+    return anaCount;
+}
+
+int main()
+{
+    string text = "forxxorfxdofr";
+    string word = "for";
+
+    cout << countAnagrams( word, text);
+
+    return 0;
+}
